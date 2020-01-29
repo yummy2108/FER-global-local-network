@@ -30,17 +30,6 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "3,2"
 root = 'oulus_casia_de_1.pkl' 
 n_classes = 6
 
-
-def fuck_1(feature,id):
-    #print(feature.shape)
-    fea = feature[0,0,:,:]
-    fea = np.squeeze(fea)
-    fea = fea.transpose(1,0)
-    fea_img = (fea - fea.min()) / (fea.max() - fea.min())
-    fea_img = np.uint8(255*fea_img)
-    heat_img = cv2.applyColorMap(fea_img, cv2.COLORMAP_JET)
-    cv2.imwrite('feature/'+str(id)+'.jpg',heat_img)
-
 transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
@@ -124,7 +113,7 @@ def train(fold, train_dataset,path, test_dataset,rerange):
 
             mixup, targets_a, targets_b, lam = mixup_data(x3,label,1)
 
-            out1, out2, shit = net(x1,x2,mixup,e1,e2,e3,n1,n2,n3,m1,m2,m3)
+            out1, out2 = net(x1,x2,mixup,e1,e2,e3,n1,n2,n3,m1,m2,m3)
             #print(out.shape, label.shape)
 
             loss_f = mixup_criterion(targets_a.reshape(-1),targets_b.reshape(-1),lam)
@@ -202,9 +191,7 @@ def train(fold, train_dataset,path, test_dataset,rerange):
             tm3 = tm3.type(torch.FloatTensor)
             tm3 = network.tensor_to_variable(tm3, is_cuda=True, is_training=False)
 
-            tout1, tout2, shit = net(tx3,tx3,tx3,te3,te3,te3,tn3,tn3,tn3,tm3,tm3,tm3)
-            shit = shit.cpu().detach().numpy()
-            #fuck_1(shit,tindex)
+            tout1, tout2 = net(tx3,tx3,tx3,te3,te3,te3,tn3,tn3,tn3,tm3,tm3,tm3)
 
             tout = tout1 + tout2
 
@@ -244,7 +231,7 @@ for i in range(10):
     train_dataset = Emotion_Loder(txt=root,fold=i, transform = transform)
     
     test_dataset = test_Emotion_Loder(txt=root, fold=i, transform = transform)
-    path = './CK_log/{}/'.format(i)
+    path = './Oulu_log/{}/'.format(i)
     if not os.path.exists(path):
         os.mkdir(path)
     b_ep = 0
