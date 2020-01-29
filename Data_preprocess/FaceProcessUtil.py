@@ -1,27 +1,3 @@
-# @Author: Yan Tang
-# @Date:   2018-06-27 
-
-'''
-----------------------------------------------------------------
-Facial image pre-processing including:
-face detection
-landmarks detection
-facial rotation correction
-facial cropping, resize
-geometric feature extraction
-
-Example:
-import FaceProcessUtil as fpu
-flag, img=fpu.calibrateImge(image_path)
-if flag:
-    imgr = fpu.getLandMarkFeatures_and_ImgPatches(img)
-#####
-img is the pre-processed image for DGFN
-imgr[0] is the pre-processed image for DFSN and DFSN-I
-imgr[2] is the static geometric feature  of img
-----------------------------------------------------------------
-'''
-
 import math
 import cv2
 import dlib
@@ -34,7 +10,7 @@ mpoint = [63.78009, 41.66620]
 target_size = 128
 
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor("./dlibmodel/shape_predictor_68_face_landmarks.dat")
+predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
 #get geometric feature
 def __getLandmarkFeatures(X, Y):###
