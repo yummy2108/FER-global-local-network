@@ -112,7 +112,7 @@ def train(fold, train_dataset,path, test_dataset,rerange):
 
             mixup, targets_a, targets_b, lam = mixup_data(x3,label,1)
 
-            out1, out2, shit = net(x1,x2,mixup,e1,e2,e3,n1,n2,n3,m1,m2,m3)
+            out1, out2 = net(x1,x2,mixup,e1,e2,e3,n1,n2,n3,m1,m2,m3)
             #print(out.shape, label.shape)
 
             loss_f = mixup_criterion(targets_a.reshape(-1),targets_b.reshape(-1),lam)
@@ -190,7 +190,7 @@ def train(fold, train_dataset,path, test_dataset,rerange):
             tm3 = tm3.type(torch.FloatTensor)
             tm3 = network.tensor_to_variable(tm3, is_cuda=True, is_training=False)
 
-            tout1, tout2, _ = net(tx3,tx3,tx3,te3,te3,te3,tn3,tn3,tn3,tm3,tm3,tm3)
+            tout1, tout2 = net(tx3,tx3,tx3,te3,te3,te3,tn3,tn3,tn3,tm3,tm3,tm3)
 
             tout = tout1 + tout2
 
