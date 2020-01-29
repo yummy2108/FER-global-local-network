@@ -1,5 +1,5 @@
 # FER-global-local-network
-Facial expression recognition
+>  Mingjing Yu, Huicheng Zheng, Zhifeng Peng, Jiayu Dong, and Heran Du. 2019. "Facial expression recognition based on a multi-task global-local network". in Pattern Recognition Letter.
 ![global-local-Network](https://github.com/yummy2108/FER-global-local-network/blob/master/pipeline.png)
 
 ## Download data
