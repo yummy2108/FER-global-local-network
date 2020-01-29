@@ -69,5 +69,5 @@ class GLENet(nn.Module):
         out1, out2 = self.back_end(f3, local_feature)
         #ip1 = self.ip1(out)
 
-        return out1, out2, f3
+        return out1, out2
     
