@@ -214,6 +214,8 @@ def train(fold, train_dataset,path, test_dataset):
 if __name__ == '__main__':
 
 strat_time = time.time()
+test_ep = []
+test_res = []
 for i in range(10):
     train_dataset = Emotion_Loder(txt=root,fold=i, transform = transform)
     
