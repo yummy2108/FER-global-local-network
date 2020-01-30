@@ -1,6 +1,6 @@
 # FER-global-local-network
->  Mingjing Yu, Huicheng Zheng, Zhifeng Peng, Jiayu Dong, and Heran Du. 2020. "Facial expression recognition based on a multi-task global-local network". in Pattern Recognition Letter, Volume 131, Pages 166-171. [Paper](https://www.sciencedirect.com/science/article/abs/pii/S0167865520300155)
-![global-local-Network](https://github.com/yummy2108/FER-global-local-network/blob/master/pipeline.png)
+>  Mingjing Yu, Huicheng Zheng, Zhifeng Peng, Jiayu Dong, and Heran Du. 2020. "Facial expression recognition based on a multi-task global-local network". in Pattern Recognition Letters, Volume 131, Pages 166-171. [Paper](https://www.sciencedirect.com/science/article/abs/pii/S0167865520300155)
+![global-local-Network](https://github.com/yummy2108/FER-global-local-network/blob/master/model.jpg)
 
 ## Download data
 Download CK+ and Oulu-CASIA databases from network   
@@ -26,9 +26,9 @@ We develop part of the preprocessing code from [Tang Yan's work](https://github.
 
 ## Network Training
 The main code is in 'Train_FER' directory.
-1. We use deformable cnn in our network. We thanks [OuYang Wei](https://github.com/oeway/pytorch-deform-conv) for the pytorch implementation.
+1. We use deformable cnn in our network. We thank [OuYang Wei](https://github.com/oeway/pytorch-deform-conv) for the pytorch implementation.
 
-2. We use Mixup for data augmentation. We thanks [Zhang hongyi](https://github.com/hongyi-zhang/mixup) for the pytorch implementation.
+2. We use Mixup for data augmentation. We thank [Zhang hongyi](https://github.com/hongyi-zhang/mixup) for the pytorch implementation.
 
 3. Run 'train_ck.py' for training and testing CK+ datasets.
 
