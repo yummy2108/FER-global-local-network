@@ -86,11 +86,13 @@ def pickle_2_img(data_file):
              gx = v2+v
 
              label = int(data[i]['labels'][j][2])
-             
-             #label mapping
+             """
+             #label mapping Oulu
              if label==7:
                  label = 2
+             """
              label = label-1
+             
              #print(label)                 
              #label = dense_to_one_hot(label,7)
                           
