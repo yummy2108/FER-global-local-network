@@ -1,18 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Author: Yan Tang
-# @Date:   2018-06-27 
-
-'''
-----------------------------------------------------------------
-Load data for '.pkl' file. 
-Generate differential geometric data.
-Convert label to one hot label. 
-For example: 
-3->[0,0,1,0,0,0] and 5->[0,0,0,0,1,0].
-Load data for model training for cnn_for_fera_ten_fold_ten.py
-----------------------------------------------------------------
-'''
-
 import os
 import pickle 
 import cv2
