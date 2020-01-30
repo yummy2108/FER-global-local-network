@@ -28,6 +28,8 @@ We develop part of the preprocessing code from [Tang Yan's work](https://github.
 The main code is in 'Train_FER' directory.
 1. We use deformable cnn in our network. We thanks [OuYang Wei](https://github.com/oeway/pytorch-deform-conv) for the pytorch implementation.
 
-2. Run 'train_ck.py' for training and testing CK+ datasets.
+2. We use Mixup for data augmentation. We thanks [Zhang hongyi](https://github.com/hongyi-zhang/mixup) for the pytorch implementation.
 
-3. Run 'train_Oulu.py' for training and testing Oulu-CASIA datasets.
+3. Run 'train_ck.py' for training and testing CK+ datasets.
+
+4. Run 'train_Oulu.py' for training and testing Oulu-CASIA datasets.
